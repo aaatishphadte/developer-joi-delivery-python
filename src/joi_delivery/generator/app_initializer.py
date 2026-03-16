@@ -59,6 +59,12 @@ grocery_products = [
     SeedData.create_grocery_product("Wheat Bread", "product101", store101),
     SeedData.create_grocery_product("Spinach", "product102", store101),
     SeedData.create_grocery_product("Crackers", "product103", store101),
+<<<<<<< Updated upstream:src/joi_delivery/generator/app_initializer.py
+=======
+    SeedData.create_grocery_product("Butter", "product104", store101),
+    SeedData.create_grocery_product("Peanut Butter", "product105", store101),
+    SeedData.create_grocery_product("Buttermilk", "product106", store101)
+>>>>>>> Stashed changes:src/generator/app_initializer.py
 ]
 
 users = [user101]
