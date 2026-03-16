@@ -6,11 +6,20 @@ from fastapi.exceptions import RequestValidationError
 from loguru import logger
 from starlette.responses import JSONResponse
 
+<<<<<<< Updated upstream:src/joi_delivery/main.py
 from joi_delivery.generator.app_initializer import initialize_data
 from joi_delivery.router import router
 from joi_delivery.service.cart_service import CartService
 from joi_delivery.service.product_service import ProductService
 from joi_delivery.service.user_service import UserService
+=======
+from .generator.app_initializer import initialize_data
+from .router import router
+from .service.cart_service import CartService
+from .service.user_service import UserService
+from .service.product_service import ProductService
+from .service.inventory_service import InventoryService
+>>>>>>> Stashed changes:src/main.py
 
 
 def create_app() -> FastAPI:
@@ -31,6 +40,10 @@ def create_app() -> FastAPI:
         user_service=app.state.user_service,
         product_service=app.state.product_service,
         cart_for_users=seed_data["cart_for_users"],
+    )
+    app.state.inventory_service = InventoryService(
+        stores=seed_data['stores'],
+        products=seed_data['grocery_products']
     )
 
     logger.info("Services initialized with static seed data")

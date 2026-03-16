@@ -240,17 +240,48 @@ Response Body
 }
 ```
 
-### Inventory Health
-
 ```http
 GET /inventory/health?store_id=store101
 ```
 
 Response Body
 
-```json lines
+```json
 {
-  // to be implemented.
+  "store_id": "store101",
+  "store_name": "Fresh Picks",
+  "total_products": 3,
+  "low_stock_count": 0,
+  "products": [
+    {
+      "product_id": "product101",
+      "product_name": "Wheat Bread",
+      "available_stock": 30,
+      "threshold": 10,
+      "is_low_stock": false,
+      "mrp": 10.5,
+      "weight": 500.0
+    },
+    {
+      "product_id": "product102",
+      "product_name": "Spinach",
+      "available_stock": 30,
+      "threshold": 10,
+      "is_low_stock": false,
+      "mrp": 10.5,
+      "weight": 500.0
+    },
+    {
+      "product_id": "product103",
+      "product_name": "Crackers",
+      "available_stock": 30,
+      "threshold": 10,
+      "is_low_stock": false,
+      "mrp": 10.5,
+      "weight": 500.0
+    }
+  ],
+  "message": null
 }
 ```
 
